@@ -39,6 +39,7 @@ binary_sensor:
 ```
 # Installation
 I am not a profesional coder so my method of installation is a bit crooked.
+
 	- Download the project as a zip file.
 	- Extract them to to a folder named ESPCanary
 	- Edit the ESPCanary.cpp file and add mqtt values to lines mentioned in the box on top.
