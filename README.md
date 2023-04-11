@@ -47,9 +47,9 @@ I am not a profesional coder so my method of installation is a bit crooked.
 	- Copy example folder into any drive or folder
 	- copy the whole EspCanary folder into arduino libary folder.(arduino ide> File > parameters> shows folder location)
 	- Add mqtt and wifi parameters to the ino file inside examples folder
-	- compile and upload
+	- Compile and upload
 	- To upload files to FTP. Install Esp SPIFFS upload tool
 	  (https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/)
-	- place files in data folder where ino file is present.
-	- upload with tool.
-	-finished.
+	- Place files in data folder where ino file is present.
+	- Upload with tool.
+	- Finished.
