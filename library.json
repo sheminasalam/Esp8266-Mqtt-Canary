@@ -1,19 +1,19 @@
 {
-	"name": "ESPCanary",
-	"description": "Create an ESP32 or ESP8266 OpenCanary Honeypot",
-	"keywords": "esp8266, ESP32, canary, honeypot, ftp, spiffs",
+	"name": "Esp8266-Mqtt-Canary",
+	"description": "Create an ESP8266 OpenCanary Honeypot",
+	"keywords": "esp8266, canary, honeypot, ftp, spiffs",
 	"authors":
 		{
-			"name": "Dan Hoover",
-			"email": "userspicephp@gmail.com",
-			"url": "https://youtube.com/AnotherMaker"
+			"name": "Shemin A Salam",
+			"email": "sheminasalam@gmail.com",
+			"url": "https://youtube.com/sheminasalam"
 		},
 	"repository":
 	{
 		"type": "git",
-		"url": "https://github.com/mudmin/ESPCanary"
+		"url": "https://github.com/sheminasalam/Esp8266-Mqtt-Canary"
 	},
-	"url": "https://AnotherMaker.com/",
+	"url": "https://example.com/",
 	"frameworks": "Arduino",
 	"platforms": "*"
 }
