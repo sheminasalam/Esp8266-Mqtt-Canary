@@ -41,15 +41,12 @@ binary_sensor:
 I am not a profesional coder so my method of installation is a bit crooked.
 
 	- Download the project as a zip file.
-	- Extract them to to a folder named ESPCanary
-	- Edit the ESPCanary.cpp file and add mqtt values to lines mentioned in the box on top.
-	- Save the file.
-	- Copy example folder into any drive or folder
-	- copy the whole EspCanary folder into arduino libary folder.(arduino ide> File > parameters> shows folder location)
-	- Add mqtt and wifi parameters to the ino file inside examples folder
-	- Compile and upload
+	- Open Arduino IDE, SKetch>include library>add .zip Library
+	- File>Examples>Esp8266-Mqtt-Canary>MqttHoneypot-v3
+	- Add mqtt and wifi parameters
+	- Save file to a new folder with name MqttHoneypot-v3. Compile and upload
 	- To upload files to FTP. Install Esp SPIFFS upload tool
 	  (https://randomnerdtutorials.com/install-esp8266-filesystem-uploader-arduino-ide/)
-	- Place files in data folder where ino file is present.
+	- Place files in data folder inside the MqttHoneypot-v3 folder.
 	- Upload with tool.
 	- Finished.
