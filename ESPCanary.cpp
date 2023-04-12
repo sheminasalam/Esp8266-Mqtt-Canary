@@ -20,13 +20,6 @@
    along with this program.  If not, see <http://www.gnu.org/licenses/>.
    
    
-  ///////////////////////////////////////
-  //     Change Values in Lines        //
-  //         184, 192-198              //
-  //                                   //
-  ///////////////////////////////////////
-   
-   
    
 */
 
@@ -181,21 +174,13 @@ void mqttCallback(char * topic, byte * payload, unsigned int length) {
 
   Serial.println("Publishing MQTT message:");
   Serial.println(message);
-  const char* mqttTopic = "esp/canary-alert";
+  const char* mqttTopic = "esp/canaryalert";
   // Publish the MQTT message
   mqttClient.publish(mqttTopic, message.c_str());
 }
 
 void FtpServer::fireCanary()
 {
-  // Define MQTT parameters
-  const char* mqttServer = "Mqtt-Server";
-  const int mqttPort = 1883;
-  const char* mqttUsername = "mqttUsername";
-  const char* mqttPassword = "mqttPassword";
-  const char* mqttTopic = "esp/canary-alert";
-  const char* mqttSyncTopic = "esp/canary-sync";
-  const char* deviceId = "esp093441";
 
   Serial.print("Connection made from ");
   String remoteip = client.remoteIP().toString();
@@ -208,7 +193,7 @@ void FtpServer::fireCanary()
   while (!mqttClient.connected()) {
     Serial.println("Connecting to MQTT server...");
 
-    if (mqttClient.connect(deviceId, mqttUsername, mqttPassword)) {
+    if (mqttClient.connect("esp124", mqttUsername, mqttPassword)) {
       Serial.println("Connected to MQTT server");
     } else {
       Serial.print("MQTT connection failed with error code ");
@@ -230,6 +215,8 @@ void FtpServer::fireCanary()
   mqttClient.publish(mqttTopic, message.c_str());
   delay(200);
   mqttClient.disconnect();
+  trigger = 1;
+   delay(200);
 }
 
 void FtpServer::clientConnected()
