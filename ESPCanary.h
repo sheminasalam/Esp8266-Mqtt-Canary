@@ -56,7 +56,15 @@
 #define FTP_BUF_SIZE 2*1460 //512   // size of file buffer for read/write
 
 
+extern int trigger;
 
+extern const char* mqttServer;
+extern const int mqttPort;
+extern const char* mqttUsername;
+extern const char* mqttPassword;
+extern const char* mqttTopic;
+extern const char* mqttSyncTopic;
+extern const char* deviceId;
 
 class FtpServer
 {
