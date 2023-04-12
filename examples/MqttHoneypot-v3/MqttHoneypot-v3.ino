@@ -36,6 +36,8 @@ const char* mqttTopic = "esp/canary-alert";
 const char* mqttSyncTopic = "esp/canary-sync"; //this is to read the state of switch when mqtt reconnects
 const char* deviceId = "esp09344";
 int attempts = 0;
+int trigger = 0;
+
 
 //Wifi Paremters
 const char * Wifissid = "Wifissid";
@@ -47,8 +49,9 @@ uint8_t newMACAddress[] = {0x00, 0x11, 0x32, 0x07, 0x6D, 0x96};
 // must be unique per network
 
 
-WiFiClient ftpClient1;
 
+
+WiFiClient ftpClient1;
 //WiFiClient wifiClient;
 PubSubClient mqttClient1(ftpClient1);
 
@@ -97,8 +100,15 @@ void mqttConnect() {
   mqttClient1.setCallback(mqttCallback1);
   while (!mqttClient1.connected() && attempts < 30) {
     Serial.println("Connecting to MQTT server...");
+    if (mqttClient1.connect(deviceId, mqttUsername, mqttPassword) && trigger == 1) {
+      attempts = 0;
+      trigger = 0;
+      delay(200);
+      mqttClient1.subscribe(mqttSyncTopic);
+      Serial.println("Connected to MQTT server and Subscirbed");
 
-    if (mqttClient1.connect(deviceId, mqttUsername, mqttPassword)) {
+    }
+    else if (mqttClient1.connect(deviceId, mqttUsername, mqttPassword)) {
       Serial.println("Connected to MQTT server");
       attempts = 0;
       mqttConnect();
