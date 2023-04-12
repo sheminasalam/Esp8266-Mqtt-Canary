@@ -34,9 +34,9 @@ const char* mqttUsername = "mqttUsername";
 const char* mqttPassword = "mqttPassword";
 const char* mqttTopic = "esp/canary-alert";
 const char* mqttSyncTopic = "esp/canary-sync"; //this is to read the state of switch when mqtt reconnects
-const char* deviceId = "esp09344";
-int attempts = 0;
-int trigger = 0;
+const char* deviceId = "esp09344"; // no need to change
+int attempts = 0; // no need to change
+int trigger = 0; // no need to change
 
 
 //Wifi Paremters
